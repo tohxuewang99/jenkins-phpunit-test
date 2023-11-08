@@ -1,17 +1,13 @@
 pipeline {
-	agent any
-
-	environment {
-		PHP_VERSION = '8.2' // Change this to the desired PHP version
+	agent {
+		docker {
+			image 'php:8.2'
+		}
 	}
-
 	stages {
-		stage('Install PHP') {
+		stage('Build') {
 			steps {
-				script {
-					// Install PHP on the Jenkins machine
-					sh "sudo apt-get update && sudo apt-get install -y php$PHP_VERSION php$PHP_VERSION-cli php$PHP_VERSION-mbstring"
-				}
+				sh 'composer install'
 			}
 		}
 		stage('Test') {
