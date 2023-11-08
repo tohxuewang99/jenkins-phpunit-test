@@ -4,6 +4,9 @@ pipeline {
 			image 'composer:latest'
 		}
 	}
+	tools{
+        docker 'docker'
+    }
 	stages {
 		stage('Build') {
 			steps {
