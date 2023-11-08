@@ -10,7 +10,7 @@ pipeline {
 			steps {
 				script {
 					// Install PHP on the Jenkins machine
-					sh "apt-get update && apt-get install -y php$PHP_VERSION php$PHP_VERSION-cli php$PHP_VERSION-mbstring"
+					sh "sudo apt-get update && sudo apt-get install -y php$PHP_VERSION php$PHP_VERSION-cli php$PHP_VERSION-mbstring"
 				}
 			}
 		}
