@@ -1,15 +1,7 @@
 pipeline {
-	agent {
-		docker {
-			image 'composer:latest'
-		}
-	}
+	agent any
 	stages {
-		stage('Build') {
-			steps {
-				sh 'composer install'
-			}
-		}
+
 		stage('Test') {
 			steps {
                 sh '/var/jenkins_home/.composer/vendor/bin/phpunit --logs-junit logs/unitreport.xml -c tests/phpunit.xml tests'
