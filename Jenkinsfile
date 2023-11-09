@@ -1,7 +1,4 @@
 pipeline {
-	tools {
-		docker 'docker'
-	}
 	agent {
 		docker {
 			image 'composer:latest'
