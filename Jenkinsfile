@@ -1,7 +1,10 @@
 pipeline {
+	tools {
+		docker 'docker'
+	}
 	agent {
 		docker {
-			image 'php:8.2'
+			image 'composer:latest'
 		}
 	}
 	stages {
